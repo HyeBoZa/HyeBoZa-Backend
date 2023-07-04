@@ -11,6 +11,7 @@ public class BenefitResponse {
 
     private String title;
     private String control;
+    private String content;
     private String userCategory;
     private String benefitCategory;
 

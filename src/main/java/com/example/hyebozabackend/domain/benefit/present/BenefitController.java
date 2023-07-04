@@ -5,6 +5,7 @@ import com.example.hyebozabackend.domain.benefit.present.dto.CreateBenefitReques
 import com.example.hyebozabackend.domain.benefit.service.CreateBenefitService;
 import com.example.hyebozabackend.domain.benefit.service.ReadAllBenefitService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
@@ -20,9 +21,12 @@ public class BenefitController {
         createBenefitService.execute(request);
     }
 
-    @GetMapping
-    public BenefitListResponse read() {
-        return readAllBenefitService.execute();
-    }
 
+    @GetMapping
+    public BenefitListResponse read(
+            @RequestParam(value = "user", required = false, defaultValue = " ") String user,
+            @RequestParam(value = "benefit", required = false, defaultValue = " ") String benefit
+    ) {
+        return readAllBenefitService.execute(user, benefit);
+    }
 }
