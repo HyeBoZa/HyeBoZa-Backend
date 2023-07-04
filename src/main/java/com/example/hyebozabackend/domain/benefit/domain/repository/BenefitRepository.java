@@ -14,12 +14,12 @@ public interface BenefitRepository extends CrudRepository<Benefit, Long>, Benefi
 
     Optional<Benefit> findBenefitById(Long id);
 
-    List<Benefit> findAll();
+    List<Benefit> findAllByTitleContains(String title);
 
-    List<Benefit> findAllByUserCategoryAndBenefitCategory(UserCategory userCategory, BenefitCategory benefitCategory);
+    List<Benefit> findAllByUserCategoryAndBenefitCategoryAndTitleContains(UserCategory userCategory, BenefitCategory benefitCategory, String title);
 
-    List<Benefit> findAllByUserCategory(UserCategory userCategory);
+    List<Benefit> findAllByUserCategoryAndTitleContains(UserCategory userCategory, String title);
 
-    List<Benefit> findAllByBenefitCategory(BenefitCategory benefitCategory);
+    List<Benefit> findAllByBenefitCategoryAndTitleContains(BenefitCategory benefitCategory, String title);
 
 }

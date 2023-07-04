@@ -17,8 +17,8 @@ public class ReadAllBenefitService {
     private final BenefitFacade benefitFacade;
 
     @Transactional(readOnly = true)
-    public BenefitListResponse execute(String user, String benefit) {
-        List<BenefitResponse> benefitResponses = benefitFacade.execute(user, benefit).stream()
+    public BenefitListResponse execute(String user, String benefit, String title) {
+        List<BenefitResponse> benefitResponses = benefitFacade.execute(user, benefit, title).stream()
                 .map(benefit1 -> BenefitResponse.builder()
                         .id(benefit1.getId())
                         .title(benefit1.getTitle())

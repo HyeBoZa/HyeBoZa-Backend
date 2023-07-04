@@ -28,9 +28,10 @@ public class BenefitController {
     @GetMapping
     public BenefitListResponse read(
             @RequestParam(value = "user", required = false, defaultValue = " ") String user,
-            @RequestParam(value = "benefit", required = false, defaultValue = " ") String benefit
+            @RequestParam(value = "benefit", required = false, defaultValue = " ") String benefit,
+            @RequestParam(value = "title", required = false, defaultValue = "") String title
     ) {
-        return readAllBenefitService.execute(user, benefit);
+        return readAllBenefitService.execute(user, benefit, title);
     }
 
     @GetMapping("/{id}")

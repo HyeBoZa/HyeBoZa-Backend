@@ -17,21 +17,21 @@ public class BenefitFacade {
 
     private final BenefitRepository benefitRepository;
 
-    public List<Benefit> execute(String userCategory, String benefitCategory) {
+    public List<Benefit> execute(String userCategory, String benefitCategory, String title) {
         if (Objects.equals(userCategory, " ")) {
             if (Objects.equals(benefitCategory, " ")) {
-                return benefitRepository.findAll();
+                return benefitRepository.findAllByTitleContains(title);
             }
             else {
-                return benefitRepository.findAllByBenefitCategory(BenefitCategory.valueOf(benefitCategory));
+                return benefitRepository.findAllByBenefitCategoryAndTitleContains(BenefitCategory.valueOf(benefitCategory), title);
             }
         }
 
         if (Objects.equals(benefitCategory, " ")) {
-            return benefitRepository.findAllByUserCategory(UserCategory.valueOf(userCategory));
+            return benefitRepository.findAllByUserCategoryAndTitleContains(UserCategory.valueOf(userCategory), title);
         }
 
-        return benefitRepository.findAllByUserCategoryAndBenefitCategory(UserCategory.valueOf(userCategory), BenefitCategory.valueOf(benefitCategory));
+        return benefitRepository.findAllByUserCategoryAndBenefitCategoryAndTitleContains(UserCategory.valueOf(userCategory), BenefitCategory.valueOf(benefitCategory), title);
     }
 
 }
