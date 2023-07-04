@@ -9,7 +9,8 @@ import lombok.Getter;
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum ErrorCode {
 
-    BENEFIT_NOT_FOUND(404, "benefit-404-1", "찾을 수 없음");
+    BENEFIT_NOT_FOUND(404, "benefit-404-1", "게시물을 찾을 수 없음"),
+    BOARD_NOT_FOUND(404, "board-404-1", "게시물을 찾을 수 없음");
 
     private final int status;
     private final String code;

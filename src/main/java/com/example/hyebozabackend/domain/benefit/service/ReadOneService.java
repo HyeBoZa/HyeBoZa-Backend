@@ -16,7 +16,7 @@ public class ReadOneService {
 
     @Transactional(readOnly = true)
     public BenefitResponse execute(Long id) {
-        Benefit benefit = benefitRepository.findById(id)
+        Benefit benefit = benefitRepository.findBenefitById(id)
                 .orElseThrow(() -> BenefitNotFound.EXCEPTION);
 
         return BenefitResponse.builder()
