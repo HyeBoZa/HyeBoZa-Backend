@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -25,7 +26,7 @@ public class ReadAllBenefitService {
                         .userCategory(benefit1.getUserCategory().getCategory())
                         .benefitCategory(benefit1.getBenefitCategory().getCategory())
                         .build())
-                .toList();
+                .collect(Collectors.toList());
 
         return BenefitListResponse.builder()
                 .benefitList(benefitResponses)
