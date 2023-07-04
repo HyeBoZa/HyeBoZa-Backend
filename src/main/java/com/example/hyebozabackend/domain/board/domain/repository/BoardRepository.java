@@ -11,4 +11,6 @@ import java.util.Optional;
 public interface BoardRepository extends CrudRepository<Board, Long> {
     Optional<Board> findBoardById(Long id);
     List<Board> findAll();
+
+    List<Board> findBoardsByTitleContains(String title);
 }
