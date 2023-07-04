@@ -30,7 +30,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
-        run: docker build -t moonsaxx/HYE .
+        run: docker build -t moonsaxx/hye .
 
       - name: Push on Dockerhub
-        run: docker push moonsaxx/HYE
+        run: docker push moonsaxx/hye
