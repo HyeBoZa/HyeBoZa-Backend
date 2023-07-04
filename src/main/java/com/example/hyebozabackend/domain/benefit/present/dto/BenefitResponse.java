@@ -9,6 +9,7 @@ import lombok.Getter;
 @Builder
 public class BenefitResponse {
 
+    private Long id;
     private String title;
     private String control;
     private String content;

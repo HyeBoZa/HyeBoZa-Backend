@@ -20,6 +20,7 @@ public class ReadAllBenefitService {
     public BenefitListResponse execute(String user, String benefit) {
         List<BenefitResponse> benefitResponses = benefitFacade.execute(user, benefit).stream()
                 .map(benefit1 -> BenefitResponse.builder()
+                        .id(benefit1.getId())
                         .title(benefit1.getTitle())
                         .content(benefit1.getContent())
                         .control(benefit1.getControl())
