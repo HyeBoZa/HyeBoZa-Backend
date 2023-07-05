@@ -18,8 +18,8 @@ public class SearchBoardService {
     private final BoardRepository boardRepository;
 
     @Transactional(readOnly = true)
-    public BoardListResponse execute(SearchBoardRequest request) {
-        List<BoardResponse> boardResponses = boardRepository.findBoardsByTitleContains(request.getTitle()).stream()
+    public BoardListResponse execute(String title) {
+        List<BoardResponse> boardResponses = boardRepository.findBoardsByTitleContains(title).stream()
                 .map(board -> BoardResponse.builder()
                         .id(board.getId())
                         .title(board.getTitle())

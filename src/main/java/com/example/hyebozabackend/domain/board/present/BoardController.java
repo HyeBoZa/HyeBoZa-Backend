@@ -37,8 +37,8 @@ public class BoardController {
     }
 
     @GetMapping("/search")
-    public BoardListResponse search(@RequestBody SearchBoardRequest request) {
-        return searchBoardService.execute(request);
+    public BoardListResponse search(@RequestParam(value = "title", required = false, defaultValue = "") String title) {
+        return searchBoardService.execute(title);
     }
 
 }
