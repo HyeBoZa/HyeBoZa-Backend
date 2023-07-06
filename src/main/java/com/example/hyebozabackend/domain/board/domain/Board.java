@@ -16,10 +16,10 @@ public class Board {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(columnDefinition = "VARCHAR(50)")
+    @Column(columnDefinition = "VARCHAR(1000)")
     private String title;
 
-    @Column(columnDefinition = "VARCHAR(200)")
+    @Column(columnDefinition = "VARCHAR(1000)")
     private String content;
 
 }

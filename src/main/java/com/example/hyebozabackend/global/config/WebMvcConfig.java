@@ -13,6 +13,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .addMapping("/**")
                 .allowedMethods("POST", "GET", "PUT", "OPTIONS", "DELETE", "HEAD")
                 .allowedHeaders("*")
-                .allowedOrigins("*");
+                .allowedOrigins("*")
+                .allowedOrigins("https://hyeboza.vercel.app");
     }
 }
