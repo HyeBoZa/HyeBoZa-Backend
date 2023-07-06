@@ -40,6 +40,8 @@ dependencies {
 
     implementation 'com.querydsl:querydsl-jpa'
 
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
     annotationProcessor(
             "javax.persistence:javax.persistence-api",
             "javax.annotation:javax.annotation-api",

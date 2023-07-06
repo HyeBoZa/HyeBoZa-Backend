@@ -11,9 +11,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry corsRegistry) {
         corsRegistry
                 .addMapping("/**")
-                .allowedMethods("POST", "GET", "PUT", "OPTIONS", "DELETE", "HEAD", "PATCH")
+                .allowedOriginPatterns("*")
+                .allowedMethods("*")
+                .allowCredentials(true)
                 .allowedHeaders("*")
-                .allowedOrigins("*")
-                .allowedOrigins("https://hyeboza.vercel.app");
+                .exposedHeaders("*");
     }
 }
